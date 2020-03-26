@@ -37,7 +37,7 @@ def StringtoTree(A):
     Conectivos = ['O','Y','>']
     Pila = []
     for c in A:
-        if c in LetrasProposicionales:
+        if c in letrasProposicionales:
             Pila.append(Tree(c,None,None))
         elif c == '-':
             FormulaAux = Tree (c,None,Pila[-1])
