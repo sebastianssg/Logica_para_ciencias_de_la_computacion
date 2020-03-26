@@ -114,7 +114,7 @@ def no_literales(l):
 	# Output: None/f, tal que f no es literal
     
     for j in l:
-        if j.es_literal == False:
+        if es_literal(j) == False:
             return False
         else:
             return True
