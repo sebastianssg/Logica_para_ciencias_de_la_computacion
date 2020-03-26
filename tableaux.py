@@ -75,12 +75,21 @@ def imprime_hoja(H):
 		cadena += Inorder(f)
 	return cadena + "}"
 
-def par_complementario(l):
+def par_complementario(h):
+    for x in h:
+        for y in h:
+            if len(x)==1:
+                if y=="-"+x:
+                    return True
+            else:
+                if y==x[1]:
+                    return True
+    return False
 	# Esta función determina si una lista de solo literales
 	# contiene un par complementario
 	# Input: l, una lista de literales
 	# Output: True/False
-	return False
+	
 
 def es_literal(f):
 	# Esta función determina si el árbol f es un literal
