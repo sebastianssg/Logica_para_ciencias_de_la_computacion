@@ -152,7 +152,35 @@ def clasifica_y_extiende(f):
 	# de acuerdo a la regla respectiva
 	# Input: f, una fórmula como árbol
 	# Output: no tiene output, pues modifica la variable global listaHojas
-	global listaHojas
+    if A.label=='-':
+        if A.right.label == '-':
+            listaHojas.append(A.right.right)
+            # 1ALFA
+        elif A.right.label == 'O':
+            listaHojas.append('-'+A.right.left)
+            listaHojas.append('-'+A.right.right)
+            # 3ALFA
+        elif A.right.label == '>':
+            listaHojas.append(A.right.left)
+            listaHojas.append('-'+A.right.right)
+            # 4ALFA
+        elif A.right.label == 'Y':
+            listaHojas.append(['-'+A.right.left])
+            listaHojas.append(['-'+A.right.right])
+            #return '1BETA'
+    elif A.label=='Y':
+        listaHojas.append(A.left)
+        listaHojas.append(A.right)
+        #return '2ALFA'
+    elif A.label == 'O':
+        listaHojas.append([A.left])
+        listaHojas.append([A.right])
+        #return '2BETA'
+    elif A.label == '>':
+        listaHojas.append(['-'+A.left])
+        listaHojas.append([A.right])
+        #return '3BETA'
+    global listaHojas
 
 def Tableaux(f):
 
