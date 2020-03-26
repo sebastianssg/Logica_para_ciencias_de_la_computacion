@@ -86,7 +86,16 @@ def es_literal(f):
 	# Esta función determina si el árbol f es un literal
 	# Input: f, una fórmula como árbol
 	# Output: True/False
-	return False
+    for f in H:
+        if f.right == None:
+            return True
+        elif f.label =='-':
+            if f.right.right==None:
+                return True
+            else:
+                return False
+        else:
+            return False
 
 def no_literales(l):
 	# Esta función determina si una lista de fórmulas contiene
