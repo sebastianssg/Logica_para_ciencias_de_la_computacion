@@ -95,23 +95,57 @@ def es_literal(f):
 	# Esta función determina si el árbol f es un literal
 	# Input: f, una fórmula como árbol
 	# Output: True/False
-    for f in H:
-        if f.right == None:
+    for i in f:
+        if i.right == None:
             return True
-        elif f.label =='-':
-            if f.right.right==None:
+        elif i.label =='-':
+            if i.right.right==None:
                 return True
             else:
                 return False
         else:
             return False
+    
 
 def no_literales(l):
 	# Esta función determina si una lista de fórmulas contiene
 	# solo literales
 	# Input: l, una lista de fórmulas como árboles
 	# Output: None/f, tal que f no es literal
-	return False
+    
+    for j in l:
+        if j.es_literal == False:
+            return False
+        else:
+            return True
+
+def  Alfa_o_Beta (f):
+    if (f.label == '-'):
+        if (f.right.label == '-'):
+            return '1Alfa'
+        
+    if (f.label == 'Y'):
+        return '2Alfa'
+    
+    if (f.label == '-'):
+        if (f.right.label == 'O'):
+            return '3Alfa'
+        
+    if (f.label == '-'):
+        if (f.right.label == '>'):
+            return '4Alfa'
+        
+    if (f.label == '-'):
+        if (f.right.label == 'Y'):
+            return '1Beta'
+        
+    if (f.right.label == 'O'):
+            return '2Beta'
+        
+    if (f.right.label == '>'):
+            return '3Beta'
+
+
 
 def clasifica_y_extiende(f):
 	# clasifica una fórmula como alfa o beta y extiende listaHojas
