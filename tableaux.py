@@ -50,6 +50,8 @@ def StringtoTree(A):
             Pila.append(FormulaAux)
     return Pila[-1]
 
+
+#print(Inorder(StringtoTree('pqY')))
     # Crea una formula como tree dada una formula como cadena escrita en notacion polaca inversa
     # Input: A, lista de caracteres con una formula escrita en notacion polaca inversa
              # letrasProposicionales, lista de letras proposicionales
@@ -91,33 +93,36 @@ def par_complementario(h):
 	# Output: True/False
 	
 
-def es_literal(f):
-	# Esta función determina si el árbol f es un literal
+def es_literal(i):
+	# Esta función determina si el árbol i es un literal
 	# Input: f, una fórmula como árbol
 	# Output: True/False
-    for i in f:
-        if i.right == None:
+    if i.right == None:
+        return True
+    elif i.label =='-':
+        if i.right.right==None:
             return True
-        elif i.label =='-':
-            if i.right.right==None:
-                return True
-            else:
-                return False
         else:
             return False
+    else:
+        return False
+
+#print(es_literal(StringtoTree('p-')))
     
 
-def no_literales(l):
+def solo_literales(l):
 	# Esta función determina si una lista de fórmulas contiene
 	# solo literales
 	# Input: l, una lista de fórmulas como árboles
 	# Output: None/f, tal que f no es literal
     
     for j in l:
-        if es_literal(j) == False:
+        x = StringtoTree(j)
+        if es_literal(x) == False:
             return False
-        else:
-            return True
+    return True
+#s [p, q], [¬p, q], [p, ¬¬q], [¬¬p, ¬(p∧q)]. 
+#print(solo_literales(['p-','q-']))
 
 def  Alfa_o_Beta (f):
     if (f.label == '-'):
@@ -152,35 +157,38 @@ def clasifica_y_extiende(f):
 	# de acuerdo a la regla respectiva
 	# Input: f, una fórmula como árbol
 	# Output: no tiene output, pues modifica la variable global listaHojas
+    A = StringtoTree(f)
     if A.label=='-':
         if A.right.label == '-':
-            listaHojas.append(A.right.right)
+            listaHojas.append(Inorder(A.right.right))
             # 1ALFA
         elif A.right.label == 'O':
-            listaHojas.append('-'+A.right.left)
-            listaHojas.append('-'+A.right.right)
+            listaHojas.append('-'+Inorder(A.right.left))
+            listaHojas.append('-'+Inorder(A.right.right))
             # 3ALFA
         elif A.right.label == '>':
-            listaHojas.append(A.right.left)
-            listaHojas.append('-'+A.right.right)
+            listaHojas.append(Inorder(A.right.left))
+            listaHojas.append('-'+Inorder(A.right.right))
             # 4ALFA
         elif A.right.label == 'Y':
-            listaHojas.append(['-'+A.right.left])
-            listaHojas.append(['-'+A.right.right])
+            listaHojas.append(['-'+Inorder(A.right.left)])
+            listaHojas.append(['-'+Inorder(A.right.right)])
             #return '1BETA'
     elif A.label=='Y':
-        listaHojas.append(A.left)
-        listaHojas.append(A.right)
+        listaHojas.append(Inorder(A.left))
+        listaHojas.append(Inorder(A.right))
         #return '2ALFA'
     elif A.label == 'O':
-        listaHojas.append([A.left])
-        listaHojas.append([A.right])
+        listaHojas.append([Inorder(A.left)])
+        listaHojas.append([Inorder(A.right)])
         #return '2BETA'
     elif A.label == '>':
-        listaHojas.append(['-'+A.left])
-        listaHojas.append([A.right])
+        listaHojas.append(['-'+Inorder(A.left)])
+        listaHojas.append([Inorder(A.right)])
         #return '3BETA'
-    global listaHojas
+    
+print(clasifica_y_extiende('pqYpO'))
+print(listaHojas)
 
 def Tableaux(f):
 
