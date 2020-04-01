@@ -63,7 +63,7 @@ def interpretaciones(LetrasProposicionales):
             interps.append(aux1)
     return interps
 
-def grafico(I):
+def tablero(I):
     if I["a"] == 1 and I["b"] == 1:
         C1 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 0, y = 0)
         C2 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 120, y = 0)
@@ -239,7 +239,7 @@ for i in interpretaciones_form:
         interpretaciones_form_aux.append(i)
 
 index = random.randrange(0, len(interpretaciones_form_aux) - 1)
-grafico(interpretaciones_form_aux[index])
+tablero(interpretaciones_form_aux[index])
 triqui.mainloop()
 
 print("Imprime")
