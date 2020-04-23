@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # Subrutinas para la transformacion de una
 # formula a su forma clausal
 
@@ -91,6 +89,8 @@ def Tseitin(A, letrasProposicionalesA):
         B += "Y" + Y
     
     B = atomo + B
+    print("Cosa L: ",L)
+    print("\n")
     return B
     #pass
 
