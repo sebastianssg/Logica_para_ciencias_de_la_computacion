@@ -226,6 +226,193 @@ def tablero(I):
         C8 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 120, y = 240)
         C9 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 240, y = 240)
 
+        
+        
+"""
+def tablero(I):
+    if I["a"] == 1  and I["b"] == 1 and I["c"] == 1 and I["A"] != 1  and I["B"] != 1 and I["C"] != 1:
+        C1 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 0, y = 0)
+        C2 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 120, y = 0)
+        C3 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 240, y = 0)
+        C4 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 120)
+        C5 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 120, y = 120)
+        C6 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 120)
+        C7 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 240)
+        C8 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 120, y = 240)
+        C9 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 240)
+
+    if I["a"] == 1 and I["d"] == 1 and I["g"] == 1 and I["A"] != 1 and I["D"] != 1 and I["G"] != 1:
+        C1 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 0, y = 0)
+        C2 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 120, y = 0)
+        C3 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 0)
+        C4 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 0, y = 120)
+        C5 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 120, y = 120)
+        C6 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 120)
+        C7 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 0, y = 240)
+        C8 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 120, y = 240)
+        C9 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 240)
+
+
+    if I["b"] == 1 and I["e"] == 1 and I["h"] == 1 and I["B"] != 1 and I["E"] != 1 and I["H"] != 1:
+        C1 = tk.Button(triqui,   width = 15, height = 7, relief ="groove").place(x = 0, y = 0)
+        C2 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 120, y = 0)
+        C3 = tk.Button(triqui,   width = 15, height = 7, relief ="groove").place(x = 240, y = 0)
+        C4 = tk.Button(triqui,   width = 15, height = 7, relief ="groove").place(x = 0, y = 120)
+        C5 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 120, y = 120)
+        C6 = tk.Button(triqui,  width = 15, height = 7, relief ="groove").place(x = 240, y = 120)
+        C7 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 240)
+        C8 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 120, y = 240)
+        C9 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 240)
+
+    if I["c"] == 1 and I["f"] == 1 and I["i"] == 1 and I["C"] != 1 and I["F"] != 1 and I["I"] != 1:
+        C1 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 0)
+        C2 = tk.Button(triqui,   width = 15, height = 7, relief ="groove").place(x = 120, y = 0)
+        C3 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 240, y = 0)
+        C4 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 120)
+        C5 = tk.Button(triqui,   width = 15, height = 7, relief ="groove").place(x = 120, y = 120)
+        C6 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 240, y = 120)
+        C7 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 240)
+        C8 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 120, y = 240)
+        C9 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 240, y = 240)
+
+    if I["d"] == 1 and I["e"] == 1 and I["f"] == 1 and I["D"] != 1 and I["E"] != 1 and I["F"] != 1:
+        C1 = tk.Button(triqui,   width = 15, height = 7, relief ="groove").place(x = 0, y = 0)
+        C2 = tk.Button(triqui,   width = 15, height = 7, relief ="groove").place(x = 120, y = 0)
+        C3 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 0)
+        C4 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 0, y = 120)
+        C5 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 120, y = 120)
+        C6 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 240, y = 120)
+        C7 = tk.Button(triqui,   width = 15, height = 7, relief ="groove").place(x = 0, y = 240)
+        C8 = tk.Button(triqui,   width = 15, height = 7, relief ="groove").place(x = 120, y = 240)
+        C9 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 240)
+
+
+    if I["g"] == 1 and I["e"] == 1 and I["c"] == 1 and I["G"] != 1 and I["E"] != 1 and I["C"] != 1:
+        C1 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 0)
+        C2 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 120, y = 0)
+        C3 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 240, y = 0)
+        C4 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 120)
+        C5 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 120, y = 120)
+        C6 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 120)
+        C7 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 240)
+        C8 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 120, y = 240)
+        C9 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 240)
+
+ 
+    if I["a"] == 1 and I["e"] == 1 and I["i"] == 1 and I["A"] != 1 and I["E"] != 1 and I["I"] != 1:
+        C1 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 0, y = 0)
+        C2 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 120, y = 0)
+        C3 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 0)
+        C4 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 120)
+        C5 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 120, y = 120)
+        C6 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 120)
+        C7 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 240)
+        C8 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 120, y = 240)
+        C9 = tk.Button(triqui, text =  "X",width = 15, height = 7, relief ="groove").place(x = 240, y = 240)
+
+    if I["g"] == 1 and I["h"] == 1 and I["i"] == 1 and I["G"] != 1 and I["H"] != 1 and I["I"] != 1 :
+        C1 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 0)
+        C2 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 120, y = 0)
+        C3 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 0)
+        C4 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 120)
+        C5 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 120, y = 120)
+        C6 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 120)
+        C7 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 0, y = 240)
+        C8 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 120, y = 240)
+        C9 = tk.Button(triqui, text =  "X", width = 15, height = 7, relief ="groove").place(x = 240, y = 240)
+        
+    if I["A"] == 1  and I["B"] == 1 and I["C"] == 1 and I["a"] != 1  and I["b"] != 1 and I["c"] != 1:
+        C1 = tk.Button(triqui, text =  "O", width = 15, height = 7, relief ="groove").place(x = 0, y = 0)
+        C2 = tk.Button(triqui, text =  "O", width = 15, height = 7, relief ="groove").place(x = 120, y = 0)
+        C3 = tk.Button(triqui, text =  "O", width = 15, height = 7, relief ="groove").place(x = 240, y = 0)
+        C4 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 120)
+        C5 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 120, y = 120)
+        C6 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 120)
+        C7 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 240)
+        C8 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 120, y = 240)
+        C9 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 240)
+
+    if I["A"] == 1 and I["D"] == 1 and I["G"] == 1 and I["a"] != 1 and I["d"] != 1 and I["g"] != 1:
+        C1 = tk.Button(triqui, text =  "O", width = 15, height = 7, relief ="groove").place(x = 0, y = 0)
+        C2 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 120, y = 0)
+        C3 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 0)
+        C4 = tk.Button(triqui, text =  "O", width = 15, height = 7, relief ="groove").place(x = 0, y = 120)
+        C5 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 120, y = 120)
+        C6 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 120)
+        C7 = tk.Button(triqui, text =  "O", width = 15, height = 7, relief ="groove").place(x = 0, y = 240)
+        C8 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 120, y = 240)
+        C9 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 240)
+
+
+    if I["B"] == 1 and I["E"] == 1 and I["H"] == 1 and I["b"] != 1 and I["e"] != 1 and I["h"] != 1:
+        C1 = tk.Button(triqui,   width = 15, height = 7, relief ="groove").place(x = 0, y = 0)
+        C2 = tk.Button(triqui, text =  "O", width = 15, height = 7, relief ="groove").place(x = 120, y = 0)
+        C3 = tk.Button(triqui,   width = 15, height = 7, relief ="groove").place(x = 240, y = 0)
+        C4 = tk.Button(triqui,   width = 15, height = 7, relief ="groove").place(x = 0, y = 120)
+        C5 = tk.Button(triqui, text =  "O", width = 15, height = 7, relief ="groove").place(x = 120, y = 120)
+        C6 = tk.Button(triqui,  width = 15, height = 7, relief ="groove").place(x = 240, y = 120)
+        C7 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 240)
+        C8 = tk.Button(triqui, text =  "O", width = 15, height = 7, relief ="groove").place(x = 120, y = 240)
+        C9 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 240)
+
+    if I["C"] == 1 and I["F"] == 1 and I["I"] == 1 and I["c"] != 1 and I["f"] != 1 and I["i"] != 1:
+        C1 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 0)
+        C2 = tk.Button(triqui,   width = 15, height = 7, relief ="groove").place(x = 120, y = 0)
+        C3 = tk.Button(triqui, text =  "O", width = 15, height = 7, relief ="groove").place(x = 240, y = 0)
+        C4 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 120)
+        C5 = tk.Button(triqui,   width = 15, height = 7, relief ="groove").place(x = 120, y = 120)
+        C6 = tk.Button(triqui, text =  "O", width = 15, height = 7, relief ="groove").place(x = 240, y = 120)
+        C7 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 240)
+        C8 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 120, y = 240)
+        C9 = tk.Button(triqui, text =  "O", width = 15, height = 7, relief ="groove").place(x = 240, y = 240)
+
+    if I["D"] == 1 and I["E"] == 1 and I["F"] == 1 and I["d"] != 1 and I["e"] != 1 and I["f"] != 1:
+        C1 = tk.Button(triqui,   width = 15, height = 7, relief ="groove").place(x = 0, y = 0)
+        C2 = tk.Button(triqui,   width = 15, height = 7, relief ="groove").place(x = 120, y = 0)
+        C3 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 0)
+        C4 = tk.Button(triqui, text =  "O", width = 15, height = 7, relief ="groove").place(x = 0, y = 120)
+        C5 = tk.Button(triqui, text =  "O", width = 15, height = 7, relief ="groove").place(x = 120, y = 120)
+        C6 = tk.Button(triqui, text =  "O", width = 15, height = 7, relief ="groove").place(x = 240, y = 120)
+        C7 = tk.Button(triqui,   width = 15, height = 7, relief ="groove").place(x = 0, y = 240)
+        C8 = tk.Button(triqui,   width = 15, height = 7, relief ="groove").place(x = 120, y = 240)
+        C9 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 240)
+
+
+    if I["G"] == 1 and I["E"] == 1 and I["C"] == 1 and I["g"] != 1 and I["e"] != 1 and I["c"] != 1:
+        C1 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 0)
+        C2 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 120, y = 0)
+        C3 = tk.Button(triqui, text =  "O", width = 15, height = 7, relief ="groove").place(x = 240, y = 0)
+        C4 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 120)
+        C5 = tk.Button(triqui, text =  "O", width = 15, height = 7, relief ="groove").place(x = 120, y = 120)
+        C6 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 120)
+        C7 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 240)
+        C8 = tk.Button(triqui, text =  "O", width = 15, height = 7, relief ="groove").place(x = 120, y = 240)
+        C9 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 240)
+
+ 
+    if I["A"] == 1 and I["E"] == 1 and I["I"] == 1 and I["a"] != 1 and I["e"] != 1 and I["i"] != 1:
+        C1 = tk.Button(triqui, text =  "O", width = 15, height = 7, relief ="groove").place(x = 0, y = 0)
+        C2 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 120, y = 0)
+        C3 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 0)
+        C4 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 120)
+        C5 = tk.Button(triqui, text =  "O", width = 15, height = 7, relief ="groove").place(x = 120, y = 120)
+        C6 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 120)
+        C7 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 240)
+        C8 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 120, y = 240)
+        C9 = tk.Button(triqui, text =  "O",width = 15, height = 7, relief ="groove").place(x = 240, y = 240)
+
+    if I["G"] == 1 and I["H"] == 1 and I["I"] == 1 and I["g"] != 1 and I["h"] != 1 and I["i"] != 1:
+        C1 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 0)
+        C2 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 120, y = 0)
+        C3 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 0)
+        C4 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 0, y = 120)
+        C5 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 120, y = 120)
+        C6 = tk.Button(triqui, width = 15, height = 7, relief ="groove").place(x = 240, y = 120)
+        C7 = tk.Button(triqui, text =  "O", width = 15, height = 7, relief ="groove").place(x = 0, y = 240)
+        C8 = tk.Button(triqui, text =  "O", width = 15, height = 7, relief ="groove").place(x = 120, y = 240)
+        C9 = tk.Button(triqui, text =  "O", width = 15, height = 7, relief ="groove").place(x = 240, y = 240)
+
+"""     
 LetrasProposicionales = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "A", "B", "C", "D", "E", "F", "G", "H", "I"]
 
 R1 = "i-h-g-f-e-d-c-baYYYYYYYY"
