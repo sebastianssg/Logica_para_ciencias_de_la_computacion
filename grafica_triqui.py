@@ -326,7 +326,7 @@ def DPLL(S,I):
 
 def to_O_C1(I):
     global casilla_1
-    if I["j"]==1:
+    if casilla_1['text'] == 'X' or I["j"]==1:
         casilla_1['text'] = 'O'
     elif I["a"]==1:
         casilla_1['text'] = 'X'
@@ -380,14 +380,14 @@ def to_O_C7(I):
     
 def to_O_C8(I):
     global casilla_8
-    if I["q"]==1:
+    if ["q"]==1 or I["h"]==0:
         casilla_8['text'] = 'O'
     elif I["h"]==1:
         casilla_8['text'] = 'X'
     
 def to_O_C9(I):
     global casilla_9
-    if I["r"]==1:
+    if  I["r"]==1:
         casilla_9['text'] = 'O'
     elif I["i"]==1:
         casilla_9['text'] = 'X'    
@@ -395,12 +395,71 @@ def to_O_C9(I):
 
 LetrasProposicionales = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r"]
 
-gana_o = "pnYlYrnYjYOroYlYOqnYkYOpmYjYOrqYpYOonYmYOlkYjYO"
-gana_x = "egYcYieYaYOihYgYfeYdYOOcbYaYifYcYOheYbYgdYaYOOO"
 
-formula_global = string2tree(gana_x, LetrasProposicionales)
+#REGLA 1
+r1 = "k-bYb-kYO"
+r2 = "l-cYc-lYO"
+r3 = "m-dYd-mYO"
+r4 = "n-eYe-nYO"
+r5 = "o-fYf-oYO"
+r6 = "p-gYg-pYO"
+r7 = "q-hYh-qYO"
+r8 = "r-iYi-rYO"
+r9 = "j-aYa-jYO"
+R1T=r1+r2+r3+r4+r5+r6+r7+r8+r9+"YYYYYYYY"
+
+#REGLA2_X  horizontal
+
+R21 = "abcYY"
+R22 = "defYY"
+R23 = "ghiYY"
+R2X = R21+R22+R23+"OO"
+
+#REGLA2_O horizontal
+
+R21 = "jklYY"
+R22 = "mnoYY"
+R23 = "pqrYY"
+R2O = R21+R22+R23+"OO"
+
+#REGLA3_X  vertical
+
+R21 = "adgYY"
+R22 = "behYY"
+R23 = "cfiYY"
+R3X = R21+R22+R23+"OO"
+
+#REGLA3_O vertical
+
+R21 = "jmpYY"
+R22 = "knpYY"
+R23 = "lorYY"
+R3O = R21+R22+R23+"OO"
+
+#REGLA4_X diagonal
+
+R21 = "gecYY"
+R22 = "aeiYY"
+R4X = R21+R22+"O"
+
+#REGLA4_O diagonal
+
+R41 = "jnrYY"
+R42 = "lnpYY"
+R4O = R41+R42+"O"
+
+#REGLA5
+
+R5X = R3X+"-"+R2X+"Y"+R2X+"-"+R3X+"YO"
+R5O = R3O+"-"+R2O+"Y"+R2O+"-"+R3O+"YO"
+
+#REGLA FINAL 
+RT = R1T+R2X+"Y"
+
+RF = R1T+R2O+"a"+"i"+"YYY"
+
+formula_global = string2tree(RF, LetrasProposicionales)
 form = Inorder(formula_global)
-print(form)
 tseitin = Tseitin(form, LetrasProposicionales)
 causal = formaClausal(tseitin)
 par = causal[:]
@@ -414,7 +473,7 @@ for x in par:
     count+=1
 
 
-print(par)
+
 dpll = DPLL(par, {})
 print(dpll)
 I = dpll[1]
@@ -450,5 +509,5 @@ casilla_9.place(x = 240, y = 240)
 
 root.mainloop()
 
- 
+
 
