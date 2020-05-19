@@ -87,7 +87,7 @@ print ("Reglas Diagonales:")
 Xdr4 = Tree ('O', (Tree('Y',(Tree ('a', None, None)),(Tree('Y',(Tree ('e', None, None)),(Tree ('i', None, None)))))), (Tree('Y',(Tree ('g', None, None)),(Tree('Y',(Tree ('e', None, None)),(Tree ('c', None, None)))))))
 print (Polaca_Inv(Xdr4))
 
-Odr4 = Tree ('O', (Tree('Y',(Tree ('j', None, None)),(Tree('Y',(Tree ('n', None, None)),(Tree ('r', None, None)))))), (Tree('Y',(Tree ('p', None, None)),(Tree('Y',(Tree ('n', None, None)),(Tree ('r', None, None)))))))
+Odr4 = Tree ('O', (Tree('Y',(Tree ('j', None, None)),(Tree('Y',(Tree ('n', None, None)),(Tree ('r', None, None)))))), (Tree('Y',(Tree ('p', None, None)),(Tree('Y',(Tree ('n', None, None)),(Tree ('l', None, None)))))))
 print (Polaca_Inv(Odr4))
 print("\n")
 
