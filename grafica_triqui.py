@@ -157,8 +157,6 @@ def Tseitin(A, letrasProposicionalesA):
     
     B = atomo + B
     return B
-                
-
 
 def Clausula(C):
     L = []
@@ -190,6 +188,7 @@ def formaClausal(A):
             else:
                 i += 1
     return L
+
     
 
 def unitPropagate(S,I):
@@ -365,9 +364,9 @@ def to_O_C5(I):
     
 def to_O_C6(I):
     global casilla_6
-    if I["o"]==1:
+    if I["o"]==1 or I["f"]==0:
         casilla_6['text'] = 'O'
-    elif I["f"]==1:
+    elif I["f"]==1 or I["o"]==0:
         casilla_6['text'] = 'X'
         
         
@@ -442,23 +441,33 @@ R21 = "gecYY"
 R22 = "aeiYY"
 R4X = R21+R22+"O"
 
+RNU = "ceYgYieYaYO" # PRINCIPAL
+
 #REGLA4_O diagonal
 
 R41 = "jnrYY"
 R42 = "lnpYY"
 R4O = R41+R42+"O"
 
+RNO = "lnYpYrnYjYO" # PRINCIPAL
+
 #REGLA5
 
 R5X = R3X+"-"+R2X+"Y"+R2X+"-"+R3X+"YO"
 R5O = R3O+"-"+R2O+"Y"+R2O+"-"+R3O+"YO"
 
-#REGLA FINAL 
-RT = R1T+R2X+"Y"
+RNX = "lnYpYrnYjYOrqYpYonYmYlkYjYOOroYlYqnYkYpmYjYOOYceYgYieYaYOifYcYheYbYgdYaYOOYYY-ihYgYfeYdYcbYaYOO>"
 
-RF = R1T+R2O+"a"+"i"+"YYY"
+RYX = "lnYpYrnYjYOrqYpYonYmYlkYjYOOroYlYqnYkYpmYjYOOYceYgYieYaYOifYcYheYbYgdYaYOOYYY-ihYgYfeYdYcbYaYOO>"
 
-formula_global = string2tree(RF, LetrasProposicionales)
+#REGLAS FINALES
+
+RT1 = R1T+R2O+"aiYYY"  #HORIZONTAL LINEA DE O
+RF = R1T+R5X+R5O+"aYY" #Horizontal linea de o
+RT2 = R1T+R3X+"pYY"    #VERTICAL LINEA DE X
+RT3 = R1T+RNU+"Y"      #DIAGONAL DE X
+
+formula_global = string2tree(RT1, LetrasProposicionales)
 form = Inorder(formula_global)
 tseitin = Tseitin(form, LetrasProposicionales)
 causal = formaClausal(tseitin)
